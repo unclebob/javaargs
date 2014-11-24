@@ -1,7 +1,8 @@
-package com.objectmentor.utilities.args;
+package com.cleancoder.args;
 
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.*;
 import junit.framework.TestCase;
+
+import static com.cleancoder.args.ArgsException.ErrorCode.*;
 
 public class ArgsTest extends TestCase {
   public void testCreateWithNoSchemaOrArguments() throws Exception {

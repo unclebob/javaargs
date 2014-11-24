@@ -1,6 +1,6 @@
-package com.objectmentor.utilities.args;
+package com.cleancoder.args;
 
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.*;
 
 import junit.framework.TestCase;
 
