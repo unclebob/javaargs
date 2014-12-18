@@ -1,8 +1,8 @@
 package com.cleancoder.args;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
-
 import junit.framework.TestCase;
+
+import static com.cleancoder.args.ArgsException.ErrorCode.*;
 
 public class ArgsExceptionTest extends TestCase {
   public void testUnexpectedMessage() throws Exception {
@@ -33,6 +33,16 @@ public class ArgsExceptionTest extends TestCase {
   public void testMissingDoubleMessage() throws Exception {
     ArgsException e = new ArgsException(MISSING_DOUBLE, 'x', null);
     assertEquals("Could not find double parameter for -x.", e.errorMessage());
+  }
+
+  public void testMissingMapMessage() throws Exception {
+    ArgsException e = new ArgsException(MISSING_MAP, 'x', null);
+    assertEquals("Could not find map string for -x.", e.errorMessage());
+  }
+
+  public void testMalformedMapMessage() throws Exception {
+    ArgsException e = new ArgsException(MALFORMED_MAP, 'x', null);
+    assertEquals("Map string for -x is not of form k1:v1,k2:v2...", e.errorMessage());
   }
 
   public void testInvalidArgumentName() throws Exception {
