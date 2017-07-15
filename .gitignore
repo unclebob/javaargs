@@ -4,4 +4,7 @@ build
 out
 classes
 getopts.i*
-
+.classpath
+.project
+.settings/
+bin/

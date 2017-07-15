@@ -1,8 +1,15 @@
 package com.cleancoder.args;
 
-import java.util.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_ARGUMENT_NAME;
+import static com.cleancoder.args.ArgsException.ErrorCode.UNEXPECTED_ARGUMENT;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Set;
 
 public class Args {
   private Map<Character, ArgumentMarshaler> marshalers;
@@ -27,20 +34,8 @@ public class Args {
     char elementId = element.charAt(0);
     String elementTail = element.substring(1);
     validateSchemaElementId(elementId);
-    if (elementTail.length() == 0)
-      marshalers.put(elementId, new BooleanArgumentMarshaler());
-    else if (elementTail.equals("*"))
-      marshalers.put(elementId, new StringArgumentMarshaler());
-    else if (elementTail.equals("#"))
-      marshalers.put(elementId, new IntegerArgumentMarshaler());
-    else if (elementTail.equals("##"))
-      marshalers.put(elementId, new DoubleArgumentMarshaler());
-    else if (elementTail.equals("[*]"))
-      marshalers.put(elementId, new StringArrayArgumentMarshaler());
-    else if (elementTail.equals("&"))
-      marshalers.put(elementId, new MapArgumentMarshaler());
-    else
-      throw new ArgsException(INVALID_ARGUMENT_FORMAT, elementId, elementTail);
+    ArgMarshalerType marshlerType = ArgMarshalerType.findBySchema(elementId, elementTail);
+    marshalers.put(elementId, marshlerType.getNewMarshaler());
   }
 
   private void validateSchemaElementId(char elementId) throws ArgsException {
