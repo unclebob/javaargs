@@ -1,10 +1,27 @@
+/*
+ * - comments
+ * 	- control flow -- how values are flowing
+ * - exhaustively test current test cases - end-to-end testing, test annotation(decorators)"https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations"
+ * - make test class / ParameterizedTest(if possible)
+ * - code smell *
+ * - review function/method/class/variable/parameters names - refer slides
+ * - indentation
+ * - define imports in all files
+ * 
+ * */
 package com.cleancoder.args;
 
 import java.util.*;
 
 import static com.cleancoder.args.ArgsException.ErrorCode.*;
 
+/*
+ * <h1>Args </h1>
+ * */
 public class Args {
+	/*
+	 * Comment for marshaler map 
+	 * */
   private Map<Character, ArgumentMarshaler> marshalers;
   private Set<Character> argsFound;
   private ListIterator<String> currentArgument;
@@ -22,7 +39,9 @@ public class Args {
       if (element.length() > 0)
         parseSchemaElement(element.trim());
   }
-
+/*
+ * add schema definitions -- in all files
+ * */
   private void parseSchemaElement(String element) throws ArgsException {
     char elementId = element.charAt(0);
     String elementTail = element.substring(1);

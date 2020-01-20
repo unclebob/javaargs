@@ -55,4 +55,3 @@ public class ArgsExceptionTest extends TestCase {
     assertEquals("'$' is not a valid argument format.", e.errorMessage());
   }
 }
-
