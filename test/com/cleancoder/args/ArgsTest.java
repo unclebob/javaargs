@@ -15,7 +15,7 @@ public class ArgsTest {
     assertEquals(0, args.nextArgument());
   }
 
-
+  
   @Test
   public void testWithNoSchemaButWithOneArgument() throws Exception {
     try {
@@ -26,17 +26,6 @@ public class ArgsTest {
       assertEquals('x', e.getErrorArgumentId());
     }
   }
-  
-//  @Test
-//  public void testWithNoSchemaButWithOneArgumentNew() throws Exception {
-//	    try {
-//	      new Args("", new String[]{"-x"});
-//	      fail();
-//	    } catch (ArgsException e) {
-//	      assertEquals(UNEXPECTED_ARGUMENT, e.getErrorCode());
-//	      assertEquals('x', e.getErrorArgumentId());
-//	    }
-//	  }
 
   @Test
   public void testWithNoSchemaButWithMultipleArguments() throws Exception {

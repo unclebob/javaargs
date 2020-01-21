@@ -5,18 +5,6 @@ import junit.framework.TestCase;
 import static com.cleancoder.args.ArgsException.ErrorCode.*;
 
 public class ArgsExceptionTest extends TestCase {
-
-//// test for default condition
-// public void testDefaultMessage() throws Exception {
-//	    ArgsException e = new ArgsException(ABCD, 'x', null);
-//	    assertEquals("", e.errorMessage());
-//  }	
-// test for OK condition
-  public void testOKMessage() throws Exception {
-	    ArgsException e = new ArgsException(OK, 'x', null);
-	    assertEquals("TILT: Should not get here.", e.errorMessage());
-  }	
-	
   public void testUnexpectedMessage() throws Exception {
     ArgsException e = new ArgsException(UNEXPECTED_ARGUMENT, 'x', null);
     assertEquals("Argument -x unexpected.", e.errorMessage());
