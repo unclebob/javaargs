@@ -9,6 +9,8 @@
  * - define imports in all files
  * - code coverage
  * 		- not required for tests : https://stackoverflow.com/a/24958299/3801905
+ * 
+ *  tests for if/else try/catch statements - do we need two tests for each condition
  * */
 package com.cleancoder.args;
 

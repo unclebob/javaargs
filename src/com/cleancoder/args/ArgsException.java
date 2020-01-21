@@ -39,17 +39,17 @@ public class ArgsException extends Exception {
     return errorParameter;
   }
 
-  public void setErrorParameter(String errorParameter) {
-    this.errorParameter = errorParameter;
-  }
+//  public void setErrorParameter(String errorParameter) {
+//    this.errorParameter = errorParameter;
+//  }
 
   public ErrorCode getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(ErrorCode errorCode) {
-    this.errorCode = errorCode;
-  }
+//  public void setErrorCode(ErrorCode errorCode) {
+//    this.errorCode = errorCode;
+//  }
 
   public String errorMessage() {
     switch (errorCode) {
