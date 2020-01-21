@@ -7,9 +7,10 @@ public class ArgsException extends Exception {
   private String errorParameter = null;
   private ErrorCode errorCode = OK;
 
-  public ArgsException() {}
 
-  public ArgsException(String message) {super(message);}
+//  public ArgsException() {}
+
+//  public ArgsException(String message) {super(message);}
 
   public ArgsException(ErrorCode errorCode) {
     this.errorCode = errorCode;
@@ -74,8 +75,10 @@ public class ArgsException extends Exception {
         return String.format("Could not find map string for -%c.", errorArgumentId);
       case MALFORMED_MAP:
         return String.format("Map string for -%c is not of form k1:v1,k2:v2...", errorArgumentId);
+        
+      default:
+    	  return ""; // return statement shifted to default 
     }
-    return "";
   }
 
   public enum ErrorCode {

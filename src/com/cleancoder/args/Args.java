@@ -7,7 +7,8 @@
  * - review function/method/class/variable/parameters names - refer slides
  * - indentation
  * - define imports in all files
- * 
+ * - code coverage
+ * 		- not required for tests : https://stackoverflow.com/a/24958299/3801905
  * */
 package com.cleancoder.args;
 
